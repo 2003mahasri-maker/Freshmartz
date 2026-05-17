@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Fresh Mart Supermarket</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+html{
+    scroll-behavior:smooth;
+}
+body{
+    background:#f7fff7;
+    color:#222;
+}
+
+/* NAVBAR */
+
+nav{
+    width:100%;
+    padding:18px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#0c3b2e;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    color:#fff;
+    font-size:30px;
+    font-weight:700;
+}
+
+.logo span{
+    color:#7dff9b;
+}
+
+nav ul{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#7dff9b;
+}
+
+/* HERO */
+
+.hero{
+    width:100%;
+    min-height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+    url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1600&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    padding:0 8%;
+}
+
+.hero-content{
+    max-width:650px;
+    color:white;
+}
+
+.hero-content h1{
+    font-size:65px;
+    line-height:80px;
+    margin-bottom:20px;
+}
+
+.hero-content span{
+    color:#7dff9b;
+}
+
+.hero-content p{
+    font-size:18px;
+    margin-bottom:30px;
+    line-height:32px;
+}
+
+.hero-btn{
+    display:inline-block;
+    padding:15px 35px;
+    background:#7dff9b;
+    color:#000;
+    border-radius:40px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.hero-btn:hover{
+    transform:scale(1.05);
+}
+
+/* SECTION TITLE */
+
+.section-title{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:50px;
+    color:#0c3b2e;
+}
+
+/* CATEGORIES */
+
+.categories{
+    padding:90px 8%;
+}
+
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:25px;
+}
+
+.category-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    transition:0.4s;
+}
+
+.category-card:hover{
+    transform:translateY(-10px);
+}
+
+.category-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.category-card h3{
+    text-align:center;
+    padding:20px;
+    color:#0c3b2e;
+}
+
+/* PRODUCTS */
+
+.products{
+    padding:90px 8%;
+    background:#ecfff0;
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.product-card{
+    background:white;
+    border-radius:20px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.product-card:hover{
+    transform:translateY(-10px);
+}
+
+.product-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:15px;
+}
+
+.product-card h4{
+    margin-top:15px;
+    font-size:22px;
+}
+
+.price{
+    color:#1c7d37;
+    font-size:20px;
+    margin:10px 0;
+    font-weight:600;
+}
+
+.buy-btn{
+    display:inline-block;
+    padding:10px 25px;
+    background:#0c3b2e;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    transition:0.3s;
+}
+
+.buy-btn:hover{
+    background:#1c7d37;
+}
+
+/* OFFER */
+
+.offer{
+    padding:100px 8%;
+    text-align:center;
+    background:
+    linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1488459716781-31db52582fe9?q=80&w=1600&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+
+.offer h2{
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.offer p{
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+/* WHY */
+
+.why{
+    padding:90px 8%;
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.why-box{
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 10px 20px rgba(0,0,0,0.08);
+}
+
+.why-box h3{
+    margin:15px 0;
+    color:#0c3b2e;
+}
+
+/* REVIEWS */
+
+.reviews{
+    padding:90px 8%;
+    background:#ecfff0;
+}
+
+.review-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.review-card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.08);
+}
+
+.review-card h4{
+    color:#0c3b2e;
+    margin-top:15px;
+}
+
+/* CONTACT */
+
+.contact{
+    padding:90px 8%;
+    text-align:center;
+}
+
+.contact p{
+    margin:15px 0;
+    font-size:18px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#0c3b2e;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    background:#25d366;
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    font-size:32px;
+    color:white;
+    box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero-content h1{
+    font-size:42px;
+    line-height:55px;
+}
+
+nav{
+    flex-direction:column;
+    gap:15px;
+}
+
+nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo">Fresh<span>Mart</span></div>
+
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="categories.html">Categories</a></li>
+<li><a href="product.html">Products</a></li>
+<li><a href="#offers">Offers</a></li>
+<li><a href="#reviews">Reviews</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Fresh Grocery <span>Delivered Fast</span></h1>
+
+<p>
+Best quality vegetables, fruits, groceries and daily essentials delivered to your doorstep with freshness and care.
+</p>
+
+<a href="#" class="hero-btn">Shop Now</a>
+
+</div>
+
+</section>
+
+<!-- CATEGORIES -->
+
+<section class="categories">
+
+<h2 class="section-title">Shop Categories</h2>
+
+<div class="category-grid">
+
+<div class="category-card">
+<img src="C:\Users\2006s\OneDrive\Desktop\Maha doc\vegetables.jpg">
+<h3>Fresh Vegetables</h3>
+</div>
+
+<div class="category-card">
+<img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?q=80&w=1200&auto=format&fit=crop">
+<h3>Fresh Fruits</h3>
+</div>
+
+<div class="category-card">
+<img src="C:\Users\2006s\OneDrive\Documents\Downloads\WhatsApp Image 2026-05-16 at 4.33.16 PM.jpeg">
+<h3>Groceries</h3>
+</div>
+
+<div class="category-card">
+<img src="C:\Users\2006s\OneDrive\Desktop\Maha doc\beuty.jpg">
+<h3>Beauty Products</h3>
+</div>
+
+</div>
+
+</section>
+
+<!-- PRODUCTS -->
+
+<section class="products">
+
+<h2 class="section-title">Best Selling Products</h2>
+
+<div class="product-grid">
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?q=80&w=1200&auto=format&fit=crop">
+<h4>Organic Apple</h4>
+<p class="price">₹120 / Kg</p>
+<a href="#" class="buy-btn">Buy Now</a>
+</div>
+
+<div class="product-card">
+<img src="C:\Users\2006s\OneDrive\Desktop\Maha doc\tomato.jpg">
+<h4>Fresh Tomato</h4>
+<p class="price">₹40 / Kg</p>
+<a href="#" class="buy-btn">Buy Now</a>
+</div>
+
+<div class="product-card">
+<img src="C:\Users\2006s\OneDrive\Desktop\Maha doc\rice and grocesi.jpg">
+<h4>Rice & Grocery</h4>
+<p class="price">₹899</p>
+<a href="#" class="buy-btn">Buy Now</a>
+</div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1200&auto=format&fit=crop">
+<h4>Beauty Care</h4>
+<p class="price">₹499</p>
+<a href="#" class="buy-btn">Buy Now</a>
+</div>
+
+</div>
+
+</section>
+
+<!-- OFFER -->
+
+<section class="offer" id="offers">
+
+<h2>50% OFF Today</h2>
+
+<p>Get special discounts on fresh vegetables and fruits</p>
+
+<a href="#" class="hero-btn">Explore Offers</a>
+
+</section>
+
+<!-- WHY CHOOSE -->
+
+<section class="why">
+
+<h2 class="section-title">Why Choose Us</h2>
+
+<div class="why-grid">
+
+<div class="why-box">
+<h3>Fresh Products</h3>
+<p>Daily fresh vegetables, fruits and groceries directly from trusted farms.</p>
+</div>
+
+<div class="why-box">
+<h3>Fast Delivery</h3>
+<p>Quick and safe doorstep delivery service with best packaging.</p>
+</div>
+
+<div class="why-box">
+<h3>Best Price</h3>
+<p>Affordable supermarket prices with exciting daily offers.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+
+<h2 class="section-title">Customer Reviews</h2>
+
+<div class="review-grid">
+
+<div class="review-card">
+<p>
+"Very fresh vegetables and fast delivery service. Highly recommended!"
+</p>
+<h4>- Priya</h4>
+</div>
+
+<div class="review-card">
+<p>
+"Beautiful supermarket website and easy ordering experience."
+</p>
+<h4>- Karthik</h4>
+</div>
+
+<div class="review-card">
+<p>
+"Good quality products and best discounts every week."
+</p>
+<h4>- Divya</h4>
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<h2 class="section-title">Contact Us</h2>
+
+<div class="contact-container">
+
+<div class="contact-card">
+<div class="icon">📍</div>
+<h3>Our Location</h3>
+<p>Chennai, Tamil Nadu</p>
+</div>
+
+<div class="contact-card">
+<div class="icon">📞</div>
+<h3>Phone Number</h3>
+<p>+91 9876543210</p>
+</div>
+
+<div class="contact-card">
+<div class="icon">📧</div>
+<h3>Email Address</h3>
+<p>freshmart@gmail.com</p>
+</div>
+
+</div>
+
+</section>
+<!-- FOOTER -->
+
+<footer>
+
+<p>© 2026 FreshMart Supermarket | All Rights Reserved</p>
+
+</footer>
+
+<!-- WHATSAPP -->
+
+<a href="https://wa.me/919876543210" class="whatsapp">
+💬
+</a>
+
+</body>
+</html>

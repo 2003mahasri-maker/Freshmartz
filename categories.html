@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FreshMart Categories</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f4fff4;
+    overflow-x:hidden;
+}
+
+/* HEADER */
+
+.header{
+    width:100%;
+    height:45vh;
+    background:
+    linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+    url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1600&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.header-content h1{
+    color:white;
+    font-size:65px;
+    font-weight:800;
+    margin-bottom:15px;
+}
+
+.header-content span{
+    color:#8cff73;
+}
+
+.header-content p{
+    color:white;
+    font-size:20px;
+}
+
+/* CATEGORY SECTION */
+
+.categories{
+    padding:90px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:50px;
+    color:#0c3b2e;
+    margin-bottom:70px;
+    position:relative;
+}
+
+.section-title::after{
+    content:'';
+    width:120px;
+    height:5px;
+    background:#1c7d37;
+    position:absolute;
+    bottom:-15px;
+    left:50%;
+    transform:translateX(-50%);
+    border-radius:20px;
+}
+
+.category-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:35px;
+}
+
+/* CARD */
+
+.category-card{
+    position:relative;
+    height:420px;
+    border-radius:30px;
+    overflow:hidden;
+    cursor:pointer;
+    transition:0.5s;
+    box-shadow:0 15px 30px rgba(0,0,0,0.15);
+}
+
+.category-card:hover{
+    transform:translateY(-12px) scale(1.02);
+}
+
+.category-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:0.6s;
+}
+
+.category-card:hover img{
+    transform:scale(1.1);
+}
+
+/* OVERLAY */
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2));
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    padding:30px;
+}
+
+.overlay h2{
+    color:white;
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.overlay p{
+    color:#ddd;
+    font-size:16px;
+    line-height:28px;
+    margin-bottom:25px;
+}
+
+/* BUTTON */
+
+.overlay a{
+    width:fit-content;
+    padding:13px 32px;
+    background:#8cff73;
+    color:#000;
+    text-decoration:none;
+    border-radius:40px;
+    font-weight:700;
+    transition:0.3s;
+}
+
+.overlay a:hover{
+    background:white;
+    transform:scale(1.05);
+}
+
+/* FOOTER */
+
+footer{
+    background:#0c3b2e;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:70px;
+    font-size:16px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.header-content h1{
+    font-size:42px;
+}
+
+.header-content p{
+    font-size:16px;
+}
+
+.section-title{
+    font-size:38px;
+}
+
+.category-card{
+    height:350px;
+}
+
+.overlay h2{
+    font-size:28px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO HEADER -->
+
+<section class="header">
+
+<div class="header-content">
+    <h1>Fresh<span>Mart</span> Categories</h1>
+    <p>Fresh groceries, fruits, vegetables & daily essentials</p>
+</div>
+
+</section>
+
+<!-- CATEGORY SECTION -->
+
+<section class="categories">
+
+<h2 class="section-title">Shop By Category</h2>
+
+<div class="category-container">
+
+    <!-- VEGETABLES -->
+
+    <div class="category-card">
+
+        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="overlay">
+            <h2>Vegetables</h2>
+            <p>Fresh farm vegetables directly from organic farms.</p>
+            <a href="#">Shop Now</a>
+        </div>
+
+    </div>
+
+    <!-- FRUITS -->
+
+    <div class="category-card">
+
+        <img src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="overlay">
+            <h2>Fresh Fruits</h2>
+            <p>Sweet and healthy fruits packed with freshness.</p>
+            <a href="#">Shop Now</a>
+        </div>
+
+    </div>
+
+    <!-- GROCERY -->
+
+    <div class="category-card">
+
+        <img src="C:\Users\2006s\OneDrive\Documents\Downloads\WhatsApp Image 2026-05-16 at 4.33.16 PM.jpeg">
+
+        <div class="overlay">
+            <h2>Groceries</h2>
+            <p>All your daily grocery essentials in one place.</p>
+            <a href="#">Shop Now</a>
+        </div>
+
+    </div>
+
+    <!-- BEAUTY -->
+
+    <div class="category-card">
+
+        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="overlay">
+            <h2>Beauty Care</h2>
+            <p>Premium skincare and beauty products collection.</p>
+            <a href="#">Shop Now</a>
+        </div>
+
+    </div>
+
+    <!-- DAIRY -->
+
+    <div class="category-card">
+
+        <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="overlay">
+            <h2>Dairy Products</h2>
+            <p>Milk, butter, cheese and healthy dairy products.</p>
+            <a href="#">Shop Now</a>
+        </div>
+
+    </div>
+    <!-- STATIONARY -->
+
+<div class="category-card">
+
+    <img src="C:\Users\2006s\OneDrive\Desktop\Maha doc\stationary things.jpg">
+
+    <div class="overlay">
+        <h2>Stationary</h2>
+        <p>Books, pens, office and school essentials.</p>
+        <a href="#">Shop Now</a>
+    </div>
+
+</div>
+
+<!-- TOYS -->
+
+<div class="category-card">
+
+    <img src="https://images.unsplash.com/photo-1558060370-d644479cb6f7?q=80&w=1200&auto=format&fit=crop">
+
+    <div class="overlay">
+        <h2>Toys</h2>
+        <p>Fun and educational toys for kids collection.</p>
+        <a href="#">Shop Now</a>
+    </div>
+
+</div>
+
+<!-- GIFTS -->
+
+<div class="category-card">
+
+    <img src="C:\Users\2006s\OneDrive\Desktop\Maha doc\gits.jpg">
+
+    <div class="overlay">
+        <h2>Gift Items</h2>
+        <p>Special gifts and surprise collections for every occasion.</p>
+        <a href="#">Shop Now</a>
+    </div>
+
+</div>
+
+<!-- COOKING ITEMS -->
+
+<div class="category-card">
+
+    <img src="C:\Users\2006s\OneDrive\Desktop\Maha doc\kitchen esstenial.jpg">
+
+    <div class="overlay">
+        <h2>Kitchen Things</h2>
+        <p>Kitchen essentials, cookware and cooking accessories.</p>
+        <a href="#">Shop Now</a>
+    </div>
+
+</div>
+
+<!-- POOJAI ITEMS -->
+
+<div class="category-card">
+
+    <img src="C:\Users\2006s\OneDrive\Desktop\Maha doc\pooja.jpg">
+
+    <div class="overlay">
+        <h2>Pooja Items</h2>
+        <p>Pooja essentials, lamps, incense and spiritual products.</p>
+        <a href="#">Shop Now</a>
+    </div>
+
+</div>
+
+    <!-- SNACKS -->
+
+    <div class="category-card">
+
+        <img src="https://images.unsplash.com/photo-1585238342024-78d387f4a707?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="overlay">
+            <h2>Snacks</h2>
+            <p>Tasty snacks, biscuits and crunchy collections.</p>
+            <a href="#">Shop Now</a>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+    © 2026 FreshMart Supermarket | Designed with Fresh Style
+</footer>
+
+</body>
+</html>
